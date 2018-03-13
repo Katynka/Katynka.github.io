@@ -1,0 +1,306 @@
+html, body {
+	width: 100%;
+	height: 100%;
+	background-color:#EDDDE2; 
+
+}
+
+nav {
+	display: flex;
+	padding: -1px 0;
+	background-color: #EDDDE2;
+	justify-content: center;
+}
+
+nav > ul {
+	width: 70%;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+}
+
+nav > ul > li {
+	display: flex;
+	padding: 25px 10px; 
+}
+
+a { 
+	text-decoration: none;
+	font-family: sans-serif; 
+	color: #000;
+	font-weight: bold;
+}
+
+a:hover {
+	text-decoration: underline;
+	color: #AA00A2; 
+}
+
+#nav-logo > a > img {
+	width: 64px;
+	height: 64px;
+}
+
+header {
+	height: 75vh;
+	background: url('http://widefon.com/_ld/61/64268351.jpg') no-repeat;
+}
+
+.overlay {
+	width: 100%;
+	height: 100%;
+	background: rgba(0, 0, 0, 0.6);
+}
+
+header > .overlay { display: flex; }
+
+header hgroup { 
+	margin: auto;
+	font-family: serif;
+	color: #fff;
+}
+
+h1, h2, h3 {
+	text-align: center;
+}
+
+h1 { font-size: 4rem; }
+h2, h3 { font-size: 2rem; }
+
+.slaider {
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: flex;
+	margin-top: 15px;
+}
+.fotorama {
+	margin: auto;
+}
+.depar{
+	width: 50%;
+}
+.department{
+	margin-top: 15px;
+}
+.depart{
+font-weight: bold;
+padding-top: 10px;
+font-size: 1.2em;
+line-height: 2.5rem;
+}
+.button{
+	background: #fea100;
+	color: #EDDDE2;
+	font-size: 14px;
+	border-radius: 3px;
+	text-transform: uppercase;
+	padding: 13px 0;
+	font-weight: 700;
+	display: block;
+	cursor: pointer;
+	width: 200px;
+	border: 0;
+	margin-top: 5px;
+	text-align: center;
+	margin-left: 10px;
+
+}
+.button:hover{
+	text-decoration: none;
+	background: #EDDDE2;
+	color: #fea100;
+	border: 1px solid #000;
+}
+.comp{
+	text-align: left;
+	padding: 15px 5px;
+}
+
+.photo{
+	float: right;
+	margin-top: -250px;
+}
+.text{
+	font-size: 1.2em;
+	font-weight: bold;
+	line-height: 50px;
+	margin-left: 20px;
+}
+.department{
+	text-decoration: underline;
+	margin: 0 300px;
+	margin-top: 30px;
+	margin-bottom: 20px;
+}
+.tex{
+	margin-top: 10px;
+}
+.footer{
+	background-color: #14080b;
+	height: 50px;
+	padding: 75px 176px;
+	width: 100%;
+}
+
+.nav{
+	height: 60px;
+}
+
+.tbody{
+	margin:5px 100px;
+}
+ul,li{
+	display: block;
+	margin:15px 0;
+	padding: 0;
+	text-align: center;
+}
+.img{
+	width: 50px;
+	height: 50px;
+	margin:15px 100px;
+}
+.computer-department{
+	width: 1200px;
+}
+.pro{
+	width: 1200px;
+	text-align: center;
+	margin: 0 auto;
+}
+.butt{
+	background-color: #fff;
+	color:#211014;
+	font-size: 14px;
+	border-radius: 3px;
+	text-transform: uppercase;
+	padding: 13px;
+	font-weight: 700;
+	display: block;
+	cursor: pointer;
+	width: 200px;
+	border: 0;
+	margin: -22px 730px;
+	text-align: center;
+}
+.butt:hover{
+	background-color: #2d1316;
+	color:#fff;
+	text-decoration: none;
+}
+.teac{
+	font-size: 3rem;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.galler {
+    margin: 0;
+    font-family: Arial;
+}
+
+/* The grid: Four equal columns that floats next to each other */
+.column {
+    float: left;
+    width: 25%;
+    padding: 10px;
+}
+
+/* Style the images inside the grid */
+.column img {
+    opacity: 0.8; 
+    cursor: pointer; 
+}
+
+.column img:hover {
+    opacity: 1;
+}
+
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* The expanding image container */
+.container {
+    position: relative;
+    display: none;
+}
+
+/* Expanding image text */
+#imgtext {
+    position: absolute;
+    bottom: 15px;
+    left: 15px;
+    color: white;
+    font-size: 20px;
+}
+
+/* Closable button inside the expanded image */
+.closebtn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    color: white;
+    font-size: 35px;
+    cursor: pointer;
+}
+.social .fa { font-size: 2rem;
+color:#fff;}
+.social{
+	border: 2px solid #fff;
+	width: 147px;
+    height: 38px;
+    border-radius: 16px;
+    color:#fff !important;
+}
+.social .fa:hover { 
+  cursor: pointer;
+	opacity: 0.9;
+	color: #2d1316;
+	-webkit-transition: opacity 0.3s ease;
+	-moz-transition: opacity 0.3s ease;
+	-ms-transition: opacity 0.3s ease;
+  -o-transition: opacity 0.3s ease;
+	transition: opacity 0.3s ease; 
+}
+span{
+	color:#fff;
+	font-size: 20px;
+}
+.foot{
+	margin: 0 auto;
+}
+button{
+		background-color: #fff;
+	color:#211014;
+	font-size: 14px;
+	border-radius: 3px;
+	text-transform: uppercase;
+	padding: 13px;
+	font-weight: 700;
+	display: block;
+	cursor: pointer;
+	width: 200px;
+	border: 0;
+	text-align: center;
+}
+button:hover{
+	background-color: #2d1316;
+	color:#fff;
+	text-decoration: none;
+}
+.cont{
+	text-align: left !important;
+	font-size: 20px;
+}
+.email{
+	height: 36px !important;
+}

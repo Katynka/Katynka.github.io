@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Галерея</title>
+	<link rel="stylesheet" href="css/style.css">
+</head>
+<body class="galler">
+<nav class="nav">
+		<div id="nav-logo">
+			<a href="https://vtc.vn.ua/"><img src="img/logo.png" alt="logo"></a>
+		</div>
+
+		<ul>
+			<li><a href="index.html">Головна</a></li>
+			<li><a href="about_the_department.html">Про відділення</a></li>
+			<li><a href="teacher.html">Вчителі</a></li>
+			<li><a href="gallery.html">Фотогалерея</a></li>
+			<li><a href="contacts.html">Контакти</a></li>
+		</ul></nav>
+<div style="text-align:center">
+  <h2>Галерея нашого коледжу:</h2>
+  <p>Натисніть,щоб розгорнути</p>
+</div>
+
+<!-- The four columns -->
+<div class="row">
+  <div class="column">
+    <img src="img/1.jpg" alt="Nature" style="width:100%" onclick="myFunction(this);">
+  </div>
+  <div class="column">
+    <img src="img/02.jpg" alt="Fjords" style="width:100%" onclick="myFunction(this);">
+  </div>
+  <div class="column">
+    <img src="img/2.jpg" alt="Mountains" style="width:100%" onclick="myFunction(this);">
+  </div>
+  <div class="column">
+    <img src="img/03.jpg" alt="Lights" style="width:100%" onclick="myFunction(this);">
+  </div>
+</div>
+<div class="row">
+  <div class="column">
+    <img src="img/7.jpg" alt="Nature" style="width:100%" onclick="myFunction(this);">
+  </div>
+  <div class="column">
+    <img src="img/3.jpg" alt="Fjords" style="width:100%" onclick="myFunction(this);">
+  </div>
+  <div class="column">
+    <img src="img/04.jpg" alt="Mountains" style="width:100%" onclick="myFunction(this);">
+  </div>
+  <div class="column">
+    <img src="img/6.jpg" alt="Lights" style="width:100%" onclick="myFunction(this);">
+  </div>
+</div>
+<div class="row">
+  <div class="column">
+    <img src="img/8.jpg" alt="Nature" style="width:100%" onclick="myFunction(this);">
+  </div>
+  <div class="column">
+    <img src="img/9.jpg" alt="Fjords" style="width:100%" onclick="myFunction(this);">
+  </div>
+  <div class="column">
+    <img src="img/10.jpg" alt="Mountains" style="width:100%" onclick="myFunction(this);">
+  </div>
+  <div class="column">
+    <img src="img/11.jpg" alt="Lights" style="width:100%" onclick="myFunction(this);">
+  </div>
+</div>
+
+<div class="container">
+  <span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span>
+  <img id="expandedImg" style="width:100%">
+  <div id="imgtext"></div>
+</div>
+
+<script>
+function myFunction(imgs) {
+    var expandImg = document.getElementById("expandedImg");
+    var imgText = document.getElementById("imgtext");
+    expandImg.src = imgs.src;
+    imgText.innerHTML = imgs.alt;
+    expandImg.parentElement.style.display = "block";
+}
+</script>
+
+<footer class="footer">
+
+<a href="https://vtc.vn.ua/" class="butt">
+							Вінницький технічний коледж
+						</a>
+						<div class="foot">
+<span>Поділитися:</span>
+			<div data-url="" data-title="Комп’ютерне відділення">
+	<div class="social">
+		<a data-id="vk"><span class="fa fa-vk"></span></a>
+		<!--клас такий підозрілий бо font-awesome іконки-->
+		<a data-id="fb"><span class="fa fa-facebook"></span></a>
+		<a data-id="tw"><span class="fa fa-twitter"></span></a>
+		<a data-id="gp"><span class="fa fa-google-plus"></span></a>
+	</div>
+ </div>
+</div>
+<script src="https://use.fontawesome.com/6a2c0f5d03.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</footer>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.4/fotorama.js"></script>
+
+<script type="text/javascript">
+	var Shares = {
+	title: 'Поделиться',
+	width: 600,
+	height: 400,
+
+	init: function() {
+		var share = document.querySelectorAll('.social');
+		for(var i = 0, l = share.length; i < l; i++) {
+			var url = share[i].getAttribute('data-url') || location.href, title = share[i].getAttribute('data-title') || '', 
+				desc = share[i].getAttribute('data-desc') || '', el = share[i].querySelectorAll('a');
+			for(var a = 0, al = el.length; a < al; a++) {
+				var id = el[a].getAttribute('data-id');
+				if(id)
+					this.addEventListener(el[a], 'click', {id: id, url: url, title: title, desc: desc});
+			}
+		}
+	},
+
+	addEventListener: function(el, eventName, opt) {
+		var _this = this, handler = function() {
+			_this.share(opt.id, opt.url, opt.title, opt.desc);
+		};
+		if(el.addEventListener) {
+			el.addEventListener(eventName, handler);
+		} else {
+			el.attachEvent('on' + eventName, function() {
+				handler.call(el);
+			});
+		}
+	},
+
+	share: function(id, url, title, desc) {
+		url = encodeURIComponent(url);
+		desc = encodeURIComponent(desc);
+		title = encodeURIComponent(title);
+		switch(id) {
+			case 'fb':
+				this.popupCenter('https://www.facebook.com/sharer/sharer.php?u=' + url, this.title, this.width, this.height);
+				break;
+			case 'vk':
+				this.popupCenter('https://vk.com/share.php?url=' + url + '&description=' + title + '. ' + desc, this.title, this.width, this.height);
+				break;
+			case 'tw':
+				var text = title || desc || '';
+				if(title.length > 0 && desc.length > 0)
+					text = title + ' - ' + desc;
+				if(text.length > 0)
+					text = '&text=' + text;
+				this.popupCenter('https://twitter.com/intent/tweet?url=' + url + text, this.title, this.width, this.height);
+				break;
+			case 'gp':
+				this.popupCenter('https://plus.google.com/share?url=' + url, this.title, this.width, this.height);
+				break;
+        		case 'ok':
+				this.popupCenter('https://connect.ok.ru/dk?st.cmd=WidgetSharePreview&st.shareUrl=' + url, this.title, this.width, this.height);
+				break;
+		};
+	},
+
+	newTab: function(url) {
+		var win = window.open(url, '_blank');
+		win.focus();		
+	},
+
+	popupCenter: function(url, title, w, h) {
+		var dualScreenLeft = window.screenLeft !== undefined ? window.screenLeft : screen.left;
+		var dualScreenTop = window.screenTop !== undefined ? window.screenTop : screen.top;
+		var width = window.innerWidth ? window.innerWidth : document.documentElement.clientWidth ? document.documentElement.clientWidth : screen.width;
+		var height = window.innerHeight ? window.innerHeight : document.documentElement.clientHeight ? document.documentElement.clientHeight : screen.height;
+		var left = ((width / 2) - (w / 2)) + dualScreenLeft;
+		var top = ((height / 3) - (h / 3)) + dualScreenTop;
+		var newWindow = window.open(url, title, 'scrollbars=yes, width=' + w + ', height=' + h + ', top=' + top + ', left=' + left);
+		if (window.focus) {
+				newWindow.focus();
+		}
+	}
+};
+
+$('.social a').on('click', function() {
+	var id = $(this).data('id');
+	if(id) {
+		var data = $(this).parent('.social');
+		var url = data.data('url') || location.href, title = data.data('title') || '', desc = data.data('desc') || '';
+		Shares.share(id, url, title, desc);
+	}
+});</script>
+</body>
+</html>
